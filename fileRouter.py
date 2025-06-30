@@ -17,7 +17,7 @@ class FileRouter:
         filename_parts = filename.split(".")
         if len(filename_parts) > 1:
             ext = filename_parts[-1]
-            if type(ext) == str and len(str) > 0:
+            if type(ext) == str and len(ext) > 0:
                 return ext
             else:
                 return None

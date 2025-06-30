@@ -3,7 +3,7 @@ from fileRouter import FileRouter
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origin="https://lorkaan.pythonanywhere.com")
 
 file_key = "file"
 

@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from fileRouter import FileRouter
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app, origins=["https://legal-whisper-translate.lovable.app"])

@@ -26,15 +26,20 @@ class FileRouter:
 
     @classmethod
     def run(cls, file):
+        print("Making dirs")
         os.makedirs(cls.upload_folder_path, exist_ok=True)
         fileExt = cls.getExt(file.filename)
+        print(f"file extension: {fileExt}")
         if fileExt == None:
             return []
         else:
             filepath = os.path.join(cls.upload_folder_path, file.filename)
+            print(f"saving filepath: {filepath}")
             file.save(filepath)
             extractorCls = cls.router.get(fileExt, None)
+            print(f"Extractor Class: {extractorCls}")
             if issubclass(extractorCls, SentenceExtractor):
+                print("Running Extractor Class extract method")
                 return extractorCls.extract(filepath)
             else:
                 return []

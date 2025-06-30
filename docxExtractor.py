@@ -1,4 +1,4 @@
-import docx
+from docx import Document
 from extractor import SentenceExtractor
 
 class DocxSentenceExtractor(SentenceExtractor):
@@ -8,7 +8,7 @@ class DocxSentenceExtractor(SentenceExtractor):
     @classmethod
     def extractText(cls, filepath):
         try:
-            doc = docx.Document(filepath)
+            doc = Document(filepath)
             full_text = []
             for para in doc.paragraphs:
                 full_text.append(para.text)

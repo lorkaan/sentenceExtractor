@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pdfminer = "*"
 "pdfminer.six" = "*"
+python-docx = "*"
 
 [dev-packages]
 

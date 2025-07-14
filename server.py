@@ -10,8 +10,8 @@ CORS(app, origins=["https://legal-whisper-translate.lovable.app"])
 
 file_key = "file"
 
-translate_prompt_key = ""
-translate_response_key = ""
+translate_prompt_key = "sentenceCompare"
+translate_response_key = "translation"
 
 @app.route('/upload', methods=['POST', 'OPTIONS'])
 @cross_origin(origins=["https://legal-whisper-translate.lovable.app"])

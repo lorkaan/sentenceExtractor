@@ -42,7 +42,7 @@ def translate():
         prompt = request.form.get(translate_prompt_key)
         retList = GeminiInterface.run(prompt)
         ret_data = {}
-        ret_data[] = retList
+        ret_data[translate_response_key] = retList
         return jsonify(ret_data), 200
 
 if __name__ == '__main__':

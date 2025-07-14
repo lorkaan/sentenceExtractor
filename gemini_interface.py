@@ -1,5 +1,7 @@
 import requests
 
+from read_env import EnvironVarLoader
+
 class ApiValidationError(Exception):
 
     def __init__(self, message):
@@ -17,6 +19,10 @@ class GeminiInterface:
 
     textResponseKeyArray = ["candidates", "content", "parts"]
     textListKey = "text"
+
+    env_api_key = "API_KEY"
+
+    envloader = EnvironVarLoader()
 
     @classmethod
     def access_prompt_return(cls, jsonData):
@@ -56,7 +62,7 @@ class GeminiInterface:
     
     @classmethod
     def getApiKey(cls):
-        return ""
+        return cls.envloader.get(cls.env_api_key)
 
     @classmethod
     def run(cls, prompt):
